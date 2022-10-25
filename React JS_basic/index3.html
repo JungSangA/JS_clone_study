@@ -5,14 +5,43 @@
   </body>
   <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/prop-types@15.7.2/prop-types.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
+    // Props이기 때문에 함수도 내부에서 실행 해주기
+    function Btn({ text, fontSize = 12, onClick }) {
+      return (
+        <button
+          onClick={onClick}
+          style={{
+            backgroundColor: "tomato",
+            color: "white",
+            padding: "10px 20px",
+            border: 0,
+            borderRadius: 10,
+            fontSize,
+          }}
+        >
+          {text}
+        </button>
+      );
+    }
+    // memorized => 쓸데없는 re-render를 막아줌
+    const MemorizedBtn = React.memo(Btn);
+    MemorizedBtn.propTypes = {
+      text: PropTypes.string.isRequired,
+      fontSize: PropTypes.number,
+      // onClick: PropTypes.func,
+    };
     function App() {
-      const [index, setIndex] = React.useState("x");
-      const onSelect = (event) => {
-        setIndex(event.target.value);
-      };
-      return <div></div>;
+      const [value, setValue] = React.useState("Save Changes");
+      const changeValue = () => setValue("Revert Changes");
+      return (
+        <div>
+          <MemorizedBtn text={value} onClick={changeValue} />
+          <MemorizedBtn text="Continue" fontSize={30} />
+        </div>
+      );
     }
 
     const root = document.getElementById("root");
