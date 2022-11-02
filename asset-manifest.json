@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/JS_clone_study.git/static/css/main.dff6a5ac.css",
-    "main.js": "/JS_clone_study.git/static/js/main.9a199936.js",
-    "index.html": "/JS_clone_study.git/index.html",
-    "main.dff6a5ac.css.map": "/JS_clone_study.git/static/css/main.dff6a5ac.css.map",
-    "main.9a199936.js.map": "/JS_clone_study.git/static/js/main.9a199936.js.map"
+    "main.css": "/JS_clone_study/static/css/main.dff6a5ac.css",
+    "main.js": "/JS_clone_study/static/js/main.df7bb131.js",
+    "index.html": "/JS_clone_study/index.html",
+    "main.dff6a5ac.css.map": "/JS_clone_study/static/css/main.dff6a5ac.css.map",
+    "main.df7bb131.js.map": "/JS_clone_study/static/js/main.df7bb131.js.map"
   },
   "entrypoints": [
     "static/css/main.dff6a5ac.css",
-    "static/js/main.9a199936.js"
+    "static/js/main.df7bb131.js"
   ]
 }
